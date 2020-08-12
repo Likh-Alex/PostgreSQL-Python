@@ -21,3 +21,23 @@ class User:
     def watched_movies(self):
         movies_watched = list(filter(lambda movie: movie.watched, self.movies))
         return movies_watched
+
+    def set_watched(self, name):
+        for movie in self.movies:
+            if movie.title == name:
+                movie.watched == True
+
+
+
+    def json(self):
+        return {
+            'name':self.name,
+            'movies':[movie.json() for movie in self.movies]
+        }
+
+    @classmethod
+    def from_json(cls, data):
+        user = cls(data['name'])
+        for movie in data['movies']:
+            user.movies.append(Movie.from_json(movie))
+        return user

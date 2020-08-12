@@ -13,3 +13,14 @@ class Movie:
 
     def __str__(self):
         return f'ID :{self.id}, title: {self.title}, rating: {self.rating}, genre: {self.genre}'
+
+    def json(self):
+        return{
+            'title':self.title,
+            'rating':self.rating,
+            'genre':self.genre,
+            'watched':self.watched
+        }
+    @classmethod
+    def from_json(cls, data):
+        return Movie(**data)

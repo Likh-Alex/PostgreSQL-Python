@@ -1,0 +1,1 @@
+{"name": "Alex", "movies": [{"title": "Rambo", "rating": 4, "genre": "Action", "watched": false}, {"title": "Matrix", "rating": 5, "genre": "Sci-fi", "watched": true}, {"title": "Batman", "rating": 4, "genre": "Action", "watched": false}]}
